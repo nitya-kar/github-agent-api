@@ -6,3 +6,4 @@ langchain-openai==1.0.2
 langchain-core==1.0.4
 pygithub==2.8.1
 pydantic==2.9.2
+gunicorn==22.0.0
