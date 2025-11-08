@@ -1,5 +1,6 @@
 import uvicorn
 import os
+import re
 
 from fastapi import FastAPI, HTTPException
 from langchain_community.agent_toolkits.github.toolkit import GitHubToolkit
@@ -34,14 +35,14 @@ llm = get_llm()
 
 
 def setup_tool():
-    import re
     github = GitHubAPIWrapper()
     toolkit = GitHubToolkit.from_github_api_wrapper(github)
     tools = toolkit.get_tools()
 
     for tool in tools:
         tool.name = re.sub(r'[^a-zA-Z0-9_.-]', '_', tool.name)
-    return tool
+    
+    return tools
 
 tools = setup_tool()
 
