@@ -8,12 +8,7 @@ from langchain_openai import ChatOpenAI
 from langchain.agents import create_agent
 from langchain.messages import HumanMessage, SystemMessage
 from langgraph.checkpoint.memory import InMemorySaver
-
-
-
-
-
-
+from pydantic import BaseModel
 
 
 app = FastAPI(title="LangChain GitHub Error Resolver", version="1.0")
