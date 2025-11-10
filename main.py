@@ -27,8 +27,7 @@ def get_llm():
     
     llm = ChatOpenAI(model="openai/gpt-5", 
                    temperature=0.1,
-                   max_tokens=5000,
-                   timeout=30)
+                   timeout=300)
     return llm
 
 llm = get_llm()
@@ -101,5 +100,6 @@ async def search_error(request: GithubSearchRequest):
 # =============================
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
 
 
