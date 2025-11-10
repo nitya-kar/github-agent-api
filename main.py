@@ -25,7 +25,7 @@ def get_llm():
     The agent will use GPT to reason and search GitHub/StackOverflow results.
     """
     
-    llm = ChatOpenAI(model="openai/gpt-4.1-nano", 
+    llm = ChatOpenAI(model="kwaipilot/kat-coder-pro:free", 
                    temperature=0.1,
                    max_tokens=5000,
                    timeout=30)
@@ -101,3 +101,4 @@ async def search_error(request: GithubSearchRequest):
 # =============================
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
